@@ -23,3 +23,4 @@ def evaluate_new_dataset(npz_path, model_path):
     accuracy = (predictions == labels).float().mean().item()
     return accuracy
 
+
