@@ -1,9 +1,13 @@
 import torch
 import numpy as np
-from model_definition import DermCNN  # same class as notebook
-
+from model_definition import DermCNN
 
 def evaluate_new_dataset(npz_path, model_path):
+    """
+    Loads a dataset and trained model, returns accuracy.
+    Used during live on-campus evaluation.
+    """
+
     model = DermCNN(num_classes=7)
     model.load_state_dict(torch.load(model_path, map_location="cpu"))
     model.eval()
@@ -18,3 +22,4 @@ def evaluate_new_dataset(npz_path, model_path):
 
     accuracy = (predictions == labels).float().mean().item()
     return accuracy
+
