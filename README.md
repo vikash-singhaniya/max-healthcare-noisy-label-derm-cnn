@@ -1,6 +1,6 @@
 # Max Healthcare AI/ML Assignment
 
-This repository contains my submission for the Max Healthcare take-home assessment conducted via the Training & Placement Cell, NSUT Delhi.
+This repository contains my submission for the Max Healthcare take-home assessment
 
 ## Problem Overview
 The task involves building a robust classification model for dermatology images where training labels may be noisy, while validation data is clean and expert-verified.
@@ -20,5 +20,5 @@ The task involves building a robust classification model for dermatology images 
 A reusable inference function is provided to evaluate hidden test datasets during on-campus interviews.
 
 ## Author
-Vikash Singhaniya  
+Vikash Kumar 
 M.Tech, NSUT Delhi
