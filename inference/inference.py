@@ -4,10 +4,9 @@ from model_definition import DermCNN
 
 def evaluate_new_dataset(npz_path, model_path):
     """
-    Loads a dataset and trained model, returns accuracy.
+    Loads a trained model and evaluates accuracy on a new dataset.
     Used during live on-campus evaluation.
     """
-
     model = DermCNN(num_classes=7)
     model.load_state_dict(torch.load(model_path, map_location="cpu"))
     model.eval()
@@ -17,10 +16,7 @@ def evaluate_new_dataset(npz_path, model_path):
     labels = torch.tensor(data["labels"]).long()
 
     with torch.no_grad():
-        outputs = model(images)
-        predictions = outputs.argmax(dim=1)
+        preds = model(images).argmax(dim=1)
 
-    accuracy = (predictions == labels).float().mean().item()
+    accuracy = (preds == labels).float().mean().item()
     return accuracy
-
-
